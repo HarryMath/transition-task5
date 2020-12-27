@@ -12,7 +12,13 @@ public abstract class RoomsRepository {
     private static AbstractMap<String, GameRoom> rooms = new HashMap<String, GameRoom>();
 
     public static ArrayList<GameRoom> getAll() {
-        return new ArrayList<GameRoom>(rooms.values());
+        ArrayList<GameRoom> result = new ArrayList<>();
+        for(GameRoom room: rooms.values()) {
+            if(room.isAvailable()) {
+                result.add(room);
+            }
+        }
+        return result;
     }
 
     public static GameRoom getRoom(String roomId) {
