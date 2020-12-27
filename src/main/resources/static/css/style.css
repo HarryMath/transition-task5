@@ -1,0 +1,128 @@
+:root {
+  --header-height: calc(40px + 2vw + 1vh);
+}
+
+html {
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow-x: hidden;
+    color: #c5c5c5;
+    font-weight: 500;
+    font-family: system-ui;
+}
+
+header {
+    display: flex;
+    padding: 0 calc(8px + 1.6vw + 0.8vh);
+    color: #fff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    border-bottom: 2px solid #00000033;
+    background-color: #00000020;
+    align-items: center;
+    height: var(--header-height);
+    z-index: 999;
+}
+
+body {
+    margin-top: var(--header-height);
+    background-color: transparent;
+}
+main {
+    min-height: calc(95vh - var(--header-height));
+    height: 100%;
+    width: 100%;
+    padding: calc(5px + 1vw + 0.5vh) calc(8px + 1.6vw + 0.8vh);
+}
+footer {
+    color: #ccc;
+    background: #222129;
+}
+
+*::-webkit-scrollbar { width: 3px; } 
+
+.main {
+    width: 100%;
+    height: 100%;
+}
+
+a, a:hover {
+    color: unset;
+    text-decoration: none;
+}
+
+.nought {
+    color: #252525e8;
+}
+.cross {
+    color: #fff;
+}
+.logo {
+    margin-right: auto;
+}
+.logo> i {
+    vertical-align: text-top;
+}
+.logo-img {
+    height: calc(var(--header-height) * 0.7);
+    border-radius: 50%;
+    border: 2px solid #fff;
+    background: #fff;
+}
+.hidden {
+    display: none;
+}
+
+
+/*bootstrap customisation*/
+.row {
+    --bs-gutter-x: none;
+}
+.modal-content {
+    background-color: #464552;
+    color: #eee;
+}
+.modal-header, .modal-footer {
+    border-color: #5a5967;
+}
+.form-control {
+    box-shadow: none!important;
+    border: none!important;
+    outline: none!important;
+    background-color: #383742!important;
+    color: #eee!important;
+}
+.form-control::placeholder {
+    color: #eeeeeebb!important;
+}
+.btn-primary {
+    background-color: #e97e18;
+    border-color: #e97e18;
+    box-shadow: none!important;
+}
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active {
+    background-color: #FF5722;
+    border-color: #FF5722;
+}
+.dropdown-colorselector>.dropdown-menu>li>.color-btn, .btn-colorselector {
+    border-radius: 2px;
+}
+.dropdown-menu.dropdown-caret:after {
+    transform: scale(1.2);
+}
+.dropdown-colorselector>.dropdown-menu>li>.color-btn.selected:after, .dropdown-toggle::after {
+    content: "\2713";
+}
+.dropdown-toggle::after {
+    content: none;
+}
+
+
+
+  
+@media screen and (max-width: 600px) {
+
+}

@@ -1,0 +1,120 @@
+html {
+    background: #312f38;
+}
+
+header {
+    background-color: #2b2933;
+}
+.header-right {
+    opacity: 0.75;
+}
+
+.card-wrapper {
+    padding: 5px;
+}
+
+.card, .new-game {
+    padding: calc(3px + 0.5vw + 0.25vh);
+    cursor: pointer;
+    height: calc(70px + 6vw + 3vh);
+    text-align: center;
+    align-items: center;
+    overflow: hidden;
+    width: 100%;
+    text-decoration: none;
+    color: #fff;
+    text-shadow: 0 0 2px #0000002e;
+}
+.card:hover {
+    color: #fff;
+}
+.new-game {
+    background: transparent;
+    border-radius: 5px;
+    font-weight: 500;
+    border: 3px solid #ffffff4d;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+}
+.new-game-content {
+    width: 100%;
+    text-align: center;
+}
+.search-row {
+    width: 100%;
+}
+.game-tags {
+    width: 100%;
+    display: flow-root;
+    opacity: 0.8;
+}
+.game-tag {
+    margin: 2px 4px;
+    padding: 0 5px;
+    border-radius: 20px;
+    flex-wrap: wrap;
+    background-color: #0000003d;
+    float: left;
+    display: inline-block;
+}
+#field_size {
+    width: calc(95% - 10px);
+}
+.link {
+    text-decoration: underline;
+}
+
+
+/*tagify customisation*/
+.tagify--outside {
+    background: #544e62;
+    border: none;
+    border-radius: 19px;
+    opacity: 0.95;
+}
+.tagify--outside .tagify__input{
+  order: -1;
+  flex: 100%;
+  transition: .1s;
+  border: none;
+}
+.tagify__input::before {
+    color: #ffffffd9;
+    font-weight: 500;
+}
+.tagify__input:focus:empty::before, .tagify__input {
+    color: #ffffffd9;
+}
+.tagify--outside .tagify__tag {
+    border-radius: 25px;
+    overflow: hidden; 
+}
+.form-control .tagify__tag {
+    border-radius: 0.25rem;
+    overflow: hidden; 
+}
+.tags-look {
+    background-color: #544e623d;
+    border-radius: 13px; 
+}
+
+.tags-look .tagify__dropdown__item{
+    display: inline-block;
+    border-radius: 17px;
+    padding: .1em .7em;
+    border: none;
+    background: #7c7790;
+    margin: .2em;
+    font-size: .85em;
+    color: #fff;
+    transition: 0s;
+}
+
+.tags-look .tagify__dropdown__item--active{
+    color: #fff;
+}
+
+.tags-look .tagify__dropdown__item:hover{
+    background: #b1a9c2;
+}

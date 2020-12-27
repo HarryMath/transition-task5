@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta name="theme-color" content="#262f40">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Смотреть футбол онлайн бесплатно и в хорошем качестве. Трансляции спортивных матчей, Матчи АПЛ, Премьер лиги, Лиги Чемпионов, Лиги Европы, РПЛ, Испанской Примеры, Серии А, Лиги 1">
+        <meta name="keywords" content="биг лайф спорт, лайв, футбол онлайн, трансляции матчей, смотреть в хорошем качестве, футбольных, без регистрации, бесплатно, трансляции, РПЛ, лига чемпионов">
+        <title>game</title><!-- 
+        <link rel="icon" type="image/png" sizes="16x16" th:href="@{/icons/16.png}">
+        <link rel="icon" type="image/png" sizes="32x32" th:href="@{/icons/32.png}">
+        <link rel="icon" type="image/png" sizes="64x64" th:href="@{/icons/64.png}"> -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="http://bootstrap-colorselector.flaute.com/lib/bootstrap-colorselector-0.2.0/css/bootstrap-colorselector.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css">
+        <link rel="stylesheet" th:href="@{/css/tagify.css}">
+        <link rel="stylesheet" th:href="@{/css/style.css}">
+        <link rel="stylesheet" th:href="@{/css/home.css}">
+    </head>
+
+        
+    <body>
+
+        <header>
+            <div class="logo">
+                <img th:src="@{/img/logo.svg}" class="logo-img">
+                <i class="h2">nline</i>
+            </div>
+            <div class="header-right h5 mb-0">
+                <a href="#footer">
+                    <span>info </span>
+                    <i class="fas fa-info-circle h4 mb-0"></i>
+                </a>
+            </div>
+        </header>
+
+        <main>
+            <div class="search-row">
+                <input name="input" class="tagify--outside" placeholder="search the game">  
+            </div>
+
+            <div class="mt-3 main">
+                <div class="row row-cols-2 row-cols-sm-3 row-cols-md-4 row-cols-lg-5 content">
+
+                    <div class="col card-wrapper">
+                        <div class="new-game" id="addRoom"  data-toggle="modal" data-target="#modal_window">
+                            <div class="new-game-content">
+                                <span class="h4">new game </span>
+                                <i class="fas fa-plus h6"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div th:each="room: ${rooms}" class="col card-wrapper">
+                        <a class="card" th:href="'/' + ${room.title}" th:style="'background-color: #' + ${room.color} + 'e5;'">
+                            <div class="game-title h5" th:text="${room.title}"></div>
+                            <div class="game-tags">
+                                <div th:each="tag: ${room.tags}" class="game-tag" th:text="${tag}"></div>
+                            </div>
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </main>
+            
+
+        <div class="modal fade" id="modal_window" tabindex="-1" role="dialog" aria-labelledby="modal_window" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">New game room</h5>
+              </div>
+              <div class="modal-body">
+                
+                    <label for="game_title" class="hidden" id="game_title_label">this field is required</label>
+                    <input class="form-control mb-2" type="text" id="game_title" placeholder="Enter game title">
+                    <input class="form-control mb-2" type="text" id="game_tags" placeholder="enter game-tags">
+                    <div class="row">
+                        <div class="col-8">
+                            <label for="field-size">select field size</label>
+                            <select class="form-control" id="field_size">
+                                <option>3</option>
+                                <option>4</option>
+                                <option>5</option>
+                            </select>
+                        </div>
+                        <div class="col-4">
+                            <label for="colorselector">select color</label>
+                            <select id="colorselector">
+                                <option value="f44336" data-color="#f44336" selected="selected">carrot</option>
+                                <option value="e91e63" data-color="#e91e63">magenta</option>
+                                <option value="9c27b0" data-color="#9c27b0">purple-magenta</option>
+                                <option value="673ab7" data-color="#673ab7">purple</option>
+                                <option value="3f51b5" data-color="#3f51b5">dark-blue</option>
+                                <option value="2196f3" data-color="#2196f3">blue</option>
+                                <option value="03a9f4" data-color="#03a9f4">sky</option>
+                                <option value="00bcd4" data-color="#00bcd4">cyan</option>
+                                <option value="009688" data-color="#009688">wave</option>
+                                <option value="4caf50" data-color="#4caf50">green</option>
+                                <option value="8bc34a" data-color="#8bc34a">savanna-green</option>
+                                <option value="cddc39" data-color="#cddc39">pear</option>
+                                <option value="ffeb3b" data-color="#ffeb3b">light-yellow</option>
+                                <option value="ffc107" data-color="#ffc107">yellow</option>
+                                <option value="ff9800" data-color="#ff9800">orange</option>
+                                <option value="ff5722" data-color="#ff5722">carrot-2</option>
+                                <option value="795548" data-color="#795548">brown</option>
+                                <option value="9e9e9e" data-color="#9e9e9e">light-gray</option>
+                                <option value="607d8b" data-color="#607d8b">robot-gray</option>
+                            </select>
+                        </div>
+                    </div>
+
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">cancel</button>
+                <button type="button" class="btn btn-primary" id="create_game_button">CREATE GAME</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <footer class="page-footer deep-purple center-on-small-only pt-0" id="footer">
+
+             <div class="container">
+                <div class="row d-flex text-center justify-content-center mb-md-0 mb-4">
+                    <div class="col-md-8 col-12 mt-5">
+                        <p style="line-height: 1.7rem">
+                            Tic Tac Toe online is a classical game with some extentions. You can choose background color and field size.
+                            <a href="https://en.wikipedia.org/wiki/Tic-tac-toe" class="link">more</a>
+                        </p>
+                    </div>
+                </div>
+
+                <hr class="clearfix d-md-none" style="margin: 10% 15% 5%;">
+
+            </div>
+            <div class="footer-copyright">
+                <div class="pb-4 pt-3 text-center">
+                    © 2020 <a class="link"> Mikilangelo </a>
+                </div>
+            </div>
+
+        </footer>
+
+    </body>
+
+
+    <script th:inline="javascript">
+        const tags_list= [[${tags}]]
+    </script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="http://bootstrap-colorselector.flaute.com/lib/bootstrap-colorselector-0.2.0/js/bootstrap-colorselector.js"></script>
+    <script th:src="@{/js/tagify.js}"></script>
+    <script th:src="@{/js/home.js}"></script>
+
+</html>
